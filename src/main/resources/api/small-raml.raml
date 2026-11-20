@@ -1,0 +1,60 @@
+#%RAML 1.0
+title: small-raml
+baseUri: http://localhost:8081/api
+version: V1
+
+/employees:
+  get:
+    description: Get all employees
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              [
+                {
+                  "empid": 101,
+                  "empname": "John",
+                  "salary": 45000,
+                  "department": "IT"
+                }
+              ]
+
+  post:
+    description: Create a new employee
+    body:
+      application/json:
+        example:
+          {
+            "empid": 102,
+            "empname": "Priya",
+            "salary": 52000,
+            "department": "HR"
+          }
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              {
+                "message": "Employee created successfully"
+              }
+
+/employees/{empid}:
+  uriParameters:
+    empid:
+      type: integer
+      required: true
+  get:
+    description: Get employee by ID
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "empid": 101,
+                "empname": "John",
+                "salary": 45000,
+                "department": "IT"
+              }

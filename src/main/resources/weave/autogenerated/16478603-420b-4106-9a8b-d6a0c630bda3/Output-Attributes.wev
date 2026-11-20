@@ -1,0 +1,23 @@
+%dw 2.0
+
+type auto_16478603_420b_4106_9a8b_d6a0c630bda3_Output_Attributes = {|
+  clientCertificate?: {|
+    publicKey?: {|  |}, 
+    "type"?: String, 
+    encoded?: Binary
+  |}, 
+  headers: {|  |}, 
+  listenerPath: String, 
+  method: String, 
+  queryParams: {|  |}, 
+  queryString: String, 
+  relativePath: String, 
+  remoteAddress: String, 
+  requestPath: String, 
+  requestUri: String, 
+  scheme: String, 
+  uriParams: {| empid: Number |}, 
+  version: String, 
+  localAddress: String
+|}
+
